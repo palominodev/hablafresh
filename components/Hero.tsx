@@ -2,8 +2,10 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, MessageCircle, Shield, Trophy } from "lucide-react";
+import { useModal } from "@/context/ModalContext";
 
 export default function Hero() {
+  const { openModal } = useModal();
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
       {/* Background Elements */}
@@ -30,11 +32,17 @@ export default function Hero() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-primary-green hover:bg-primary-dark-green text-white font-semibold py-4 px-8 rounded-xl transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 group">
+              <button 
+                onClick={openModal}
+                className="bg-primary-green hover:bg-primary-dark-green text-white font-semibold py-4 px-8 rounded-xl transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 group"
+              >
                 Empezar ahora
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="bg-white border-2 border-neutral-light-gray hover:border-primary-green text-neutral-dark hover:text-primary-green font-semibold py-4 px-8 rounded-xl transition-all flex items-center justify-center gap-2">
+              <button 
+                onClick={openModal}
+                className="bg-white border-2 border-neutral-light-gray hover:border-primary-green text-neutral-dark hover:text-primary-green font-semibold py-4 px-8 rounded-xl transition-all flex items-center justify-center gap-2"
+              >
                 Ver demo
               </button>
             </div>
