@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ModalProvider } from "@/context/ModalContext";
 import ComingSoonModal from "@/components/ComingSoonModal";
+import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -57,6 +58,7 @@ export default function RootLayout({
           {children}
           <ComingSoonModal />
         </ModalProvider>
+        <Analytics />
       </body>
     </html>
   );
